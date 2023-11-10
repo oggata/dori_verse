@@ -86,7 +86,7 @@ for(var i=0;i<20;i++){
          BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_1.glb").then((result) => {
            result.meshes[0].position.x = 0;
            result.meshes[0].position.y = 1.7;
-           result.meshes[0].position.z = 5;
+           result.meshes[0].position.z = 3;
            //result.meshes[0].position.z = -10;
            result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
            var mesh = result.meshes[0];
@@ -96,7 +96,7 @@ for(var i=0;i<20;i++){
          BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_2.glb").then((result) => {
            result.meshes[0].position.x = -3;
            result.meshes[0].position.y = 1.7;
-           result.meshes[0].position.z = 5;
+           result.meshes[0].position.z = 3;
            //result.meshes[0].position.z = -10;
            result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
            var mesh = result.meshes[0];
@@ -106,7 +106,28 @@ for(var i=0;i<20;i++){
          BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_3.glb").then((result) => {
            result.meshes[0].position.x = 3;
            result.meshes[0].position.y = 1.7;
-           result.meshes[0].position.z = 5;
+           result.meshes[0].position.z = 3;
+           //result.meshes[0].position.z = -10;
+           result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
+           var mesh = result.meshes[0];
+           //houses.push(mesh);
+         });
+
+
+         BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_190918_fmt1.glb").then((result) => {
+           result.meshes[0].position.x = -3;
+           result.meshes[0].position.y = 1.7;
+           result.meshes[0].position.z = -1;
+           //result.meshes[0].position.z = -10;
+           result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
+           var mesh = result.meshes[0];
+           //houses.push(mesh);
+         });
+
+         BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191108_akt1_2.glb").then((result) => {
+           result.meshes[0].position.x = 3;
+           result.meshes[0].position.y = 1.7;
+           result.meshes[0].position.z = -1;
            //result.meshes[0].position.z = -10;
            result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
            var mesh = result.meshes[0];
