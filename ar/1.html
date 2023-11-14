@@ -3,32 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>demo</title>
-  <link rel="stylesheet" href="../style.css?aa">
+  <link rel="stylesheet" href="../style.css?11">
 
 </head>
-<style>
-model-viewer {
-  width: 800px;
-  height: 600px;
-  background-color: #70bcd1;
-  --progress-bar-color: red;
-}
-
-
-  .annotation{
-    background-color: #888888;
-    position: absolute;
-    transform: translate(10px, 10px);
-    border-radius: 10px;
-    padding: 10px;
-    width:200px;
-  }
-  /* This keeps child nodes hidden while the element loads */
-  :not(:defined) > * {
-    display: none;
-  }
-</style>
-
 <body>
 <!-- partial:index.partial.html -->
 <script
@@ -37,11 +14,20 @@ type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.
 
 <model-viewer
   src="../3d_original/colored/color_191529_fmt2_1.glb"
+  ar
+  ar-modes="webxr scene-viewer quick-look"
   camera-controls
-  orientation="0 0 0"
+  orientation="0 0 -90"
   shadow-intensity="2"
   class="model-viewer"
 >
+  <button
+    slot="ar-button"
+    id="ar-button"
+    class="ar-button"
+  >
+    See on Camera
+  </button>
 
   <div class="annotation"><a href="../">もどる</a></div>
   <button
@@ -51,6 +37,7 @@ type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.
   >
     See on Camera
   </button>
+
 </model-viewer>
 <!-- partial -->
   <script  src="../script.js"></script>
