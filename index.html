@@ -65,98 +65,104 @@
             // Create scene
         	var scene = new BABYLON.Scene(engine);
         
-
-
-/*
-for(var i=0;i<20;i++){
- BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_3.glb").then((result) => {
-    var _x = getRand(1,50)-20;
-    var _z = getRand(1,50);
-   result.meshes[0].position.x = _x;
-   result.meshes[0].position.y = 1.7;
-   result.meshes[0].position.z = _z;
-   //result.meshes[0].position.z = -10;
-   result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
-   //var mesh = result.meshes[0];
-   //houses.push(mesh);
- });
+//var houses = [];
+for(var a=1;a<10;a++){
+    BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_1.glb").then((result) => {
+    result.meshes[0].position.x = 3*a;
+    result.meshes[0].position.y = 0;
+    result.meshes[0].position.z = 3;
+    result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)           
+    });
+    console.log(a);
 }
-*/
 
-         BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_1.glb").then((result) => {
-           result.meshes[0].position.x = 0;
-           result.meshes[0].position.y = 0;
-           result.meshes[0].position.z = 3;
-           //result.meshes[0].position.z = -10;
-           result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
-           var mesh = result.meshes[0];
-           //houses.push(mesh);
-         });
 
-         BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_2.glb").then((result) => {
-           result.meshes[0].position.x = -3;
-           result.meshes[0].position.y = 0;
-           result.meshes[0].position.z = 3;
-           //result.meshes[0].position.z = -10;
-           result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
-           var mesh = result.meshes[0];
-           //houses.push(mesh);
-         });
+var names = [
+    "color_190918_fmt1_4.glb",
+    "color_190918_fmt1.glb",
+    "color_191108_akt1_1.glb",
+    "color_191108_akt1_2.glb",
+    "color_191529_fmt2_1.glb",
+    "color_191529_fmt2_2.glb",
+    "color_191529_fmt2_3.glb",
+    "colored_190918_fmt1_2.glb",
+    "colored_190918_fmt1_2.glb",
+    "colored_190918_fmt1_2.glb",
+];
 
-         BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_3.glb").then((result) => {
-           result.meshes[0].position.x = 3;
-           result.meshes[0].position.y = 0;
-           result.meshes[0].position.z = 3;
-           //result.meshes[0].position.z = -10;
-           result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
-           var mesh = result.meshes[0];
-           //houses.push(mesh);
-         });
 
-         BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_190918_fmt1.glb").then((result) => {
-           result.meshes[0].position.x = -3;
-           result.meshes[0].position.y = 0;
-           result.meshes[0].position.z = -1;
-           //result.meshes[0].position.z = -10;
-           result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
-           var mesh = result.meshes[0];
-           //houses.push(mesh);
-         });
+var cc = 1;
 
-         BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191108_akt1_2.glb").then((result) => {
-           result.meshes[0].position.x = 3;
-           result.meshes[0].position.y = 0;
-           result.meshes[0].position.z = -1;
-           //result.meshes[0].position.z = -10;
-           result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
-           var mesh = result.meshes[0];
-           //houses.push(mesh);
-         });
+var col =-15;
+var row = -2;
+
+
+
+setInterval(function () {
+
+    col++;
+    if(col>15){
+        col=-15;
+        row++;
+    }
+
+
+    cc++;
+        console.log(cc);
+
+
+if(cc<300){
+
+    var filenme = names[cc%9];
+    BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", filenme).then((result) => {
+    result.meshes[0].position.x = 5*col;
+    result.meshes[0].position.y = 0;
+    result.meshes[0].position.z = 8*row;
+    result.meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)           
+    });
+    //console.log(a);
+}
+
+}, 10);
 
 
             // Lights and camera
-            var light = new BABYLON.DirectionalLight("light", new BABYLON.Vector3(0, -0.5, 1.0), scene);
+            var light = new BABYLON.DirectionalLight("light", new BABYLON.Vector3(2, -2.5, 2.0), scene);
             light.position = new BABYLON.Vector3(0, 10, -2);
-            var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 4, 3, new BABYLON.Vector3(0, 3, 0), scene);
+            //var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+       light.intensity = 2.8;
+
+
+            //var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 4, 3, new BABYLON.Vector3(0, 3, 0), scene);
+
+var camera = new BABYLON.FreeCamera(
+          "camera1",
+          new BABYLON.Vector3(0, 2, -20),
+          scene
+        );
+
+
+
             camera.attachControl(canvas, true);
             scene.activeCamera.beta += 0.8;
-        
-        /*
-            // Default Environment
-            var environment = scene.createDefaultEnvironment({ enableGroundShadow: true, groundYBias: 1 });
-            environment.setMainColor(BABYLON.Color3.FromHexString("#74b9ff"))
-           */
+
+//camera.checkCollisions = true;
+        //camera.applyGravity = true;
+        //camera.ellipsoid = new BABYLON.Vector3(2, 2, 2);
+        //camera.collisionRadius = new BABYLON.Vector3(0.5, 0.5, 0.5);
+        //camera.attachControl(canvas, true);
+        camera.speed  = 0.3; //Changing it to 
+
 
            //地面
            var ground = BABYLON.Mesh.CreateGround("ground1", 2000, 2000, 2, scene);
            ground.diffuseColor = new BABYLON.Color3(0, 0, 1);
            var material = new BABYLON.StandardMaterial("bookcase", scene);
            material.diffuseColor = new BABYLON.Color3(.2, .1, .5);
-           //ground.material = material
            ground.color = "black";
            var groundMaterial = new BABYLON.StandardMaterial("ground", scene);
            groundMaterial.diffuseTexture = new BABYLON.Texture(
-             "https://cdn.glitch.global/4c7a3546-2889-4712-ab19-6d8ae832c93f/grand.png?v=1657102468367",
+             "./images/grand1.png",
              scene
            );
            groundMaterial.diffuseTexture.uScale = 600;
@@ -164,30 +170,21 @@ for(var i=0;i<20;i++){
            groundMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
            ground.material = groundMaterial;
            
-
             //空を作る
             var skybox = BABYLON.MeshBuilder.CreateBox("skyBox", {
              size: 1000.0,
             }, scene);
             var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
             skyboxMaterial.backFaceCulling = false;
-            skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("https://cdn.glitch.global/4c7a3546-2889-4712-ab19-6d8ae832c93f/sky.png?v=1657103500375", scene);
+            skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("./images/sky.png?v=111", scene);
             skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
             skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
             skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
             skybox.material = skyboxMaterial;
 
-            /*
-            // Shadows
-            var shadowGenerator = new BABYLON.ShadowGenerator(1024, light);
-            shadowGenerator.useBlurExponentialShadowMap = true;
-            shadowGenerator.blurKernel = 32;
-            shadowGenerator.addShadowCaster(sphere, true);
-        */
             // Enable VR
             var vrHelper = scene.createDefaultVRExperience({createDeviceOrientationCamera:false});
             //vrHelper.enableTeleportation({floorMeshes: [environment.ground]});
-        
         
        function getRand(from, to) {
          return from + Math.floor(Math.random() * (to - from + 1));
@@ -197,24 +194,8 @@ for(var i=0;i<20;i++){
 
         	return scene;
         };
-        /*
-        var colors = {
-                seaFoam: BABYLON.Color3.FromHexString("#16a085"),
-                green: BABYLON.Color3.FromHexString("#27ae60"),
-                blue: BABYLON.Color3.FromHexString("#2980b9"),
-                purple: BABYLON.Color3.FromHexString("#8e44ad"),
-                navy: BABYLON.Color3.FromHexString("#2c3e50"),
-                yellow: BABYLON.Color3.FromHexString("#f39c12"),
-                orange: BABYLON.Color3.FromHexString("#d35400"),
-                red: BABYLON.Color3.FromHexString("#c0392b"),
-                white: BABYLON.Color3.FromHexString("#bdc3c7"),
-                gray: BABYLON.Color3.FromHexString("#7f8c8d")
-            }
-            */
+
                 window.initFunction = async function() {
-                    
-                    
-                    
                     var asyncEngineCreation = async function() {
                         try {
                         return createDefaultEngine();
