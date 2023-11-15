@@ -1,0 +1,128 @@
+{
+    "asset": {
+        "generator": "https://3dviewer.net",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0
+        }
+    ],
+    "materials": [
+        {
+            "name": "Material",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.5775804404214573,
+                    0.5775804404214573,
+                    0.5775804404214573,
+                    1
+                ]
+            },
+            "emissiveFactor": [
+                0,
+                0,
+                0
+            ],
+            "doubleSided": true,
+            "alphaMode": "OPAQUE"
+        }
+    ],
+    "meshes": [
+        {
+            "name": "mesh_0",
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 1,
+                        "COLOR_0": 2,
+                        "NORMAL": 3
+                    },
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 0
+                }
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "uri": "model.bin",
+            "byteLength": 15938184
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1593840,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1593840,
+            "byteLength": 4781448,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 6375288,
+            "byteLength": 4781448,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 11156736,
+            "byteLength": 4781448,
+            "target": 34962
+        }
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 398460,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 398454,
+            "min": [
+                -2.9269323348999023,
+                -4.562979698181152,
+                0.1935412436723709
+            ],
+            "max": [
+                2.926847219467163,
+                4.562979698181152,
+                4.459633827209473
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 398454,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 398454,
+            "type": "VEC3"
+        }
+    ]
+}

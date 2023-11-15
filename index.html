@@ -65,6 +65,7 @@
             // Create scene
         	var scene = new BABYLON.Scene(engine);
         
+        /*
 //var houses = [];
 for(var a=1;a<10;a++){
     BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", "color_191529_fmt2_1.glb").then((result) => {
@@ -75,7 +76,7 @@ for(var a=1;a<10;a++){
     });
     console.log(a);
 }
-
+*/
 
 var names = [
     "color_190918_fmt1_4.glb",
@@ -93,7 +94,7 @@ var names = [
 
 var cc = 1;
 
-var col =-15;
+var col =-10;
 var row = -2;
 
 
@@ -101,8 +102,8 @@ var row = -2;
 setInterval(function () {
 
     col++;
-    if(col>15){
-        col=-15;
+    if(col>10){
+        col=-10;
         row++;
     }
 
@@ -111,7 +112,7 @@ setInterval(function () {
         console.log(cc);
 
 
-if(cc<300){
+if(cc<120){
 
     var filenme = names[cc%9];
     BABYLON.SceneLoader.ImportMeshAsync("", "./3d_original/colored/", filenme).then((result) => {
